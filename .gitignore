@@ -1,1 +1,6 @@
-/recharts
+recharts/
+npm-debug.log
+*.zip
+.DS_Store
+.idea
+notes.md
