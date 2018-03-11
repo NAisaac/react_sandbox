@@ -11,7 +11,7 @@ class Entrance extends React.Component {
     e.preventDefault();
     let storeId = this.state.store;
     console.log(`Going to store: ${storeId}!`);
-    // push state: method from Router that changes route without a page reload, so no memory lost in any page
+    // pushState: method from Router that changes route without a page reload, so no memory lost in any page
     this.props.history.push(`/store/${storeId}`);
   };
 

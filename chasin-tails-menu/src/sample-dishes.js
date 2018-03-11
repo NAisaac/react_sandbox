@@ -5,7 +5,7 @@ const dishes = {
     image: "/images/vietCraw.jpg",
     desc:
       "Everyones favorite pick. No debate about it.",
-    price: 1724,
+    price: 2500,
     status: "available"
   },
 
