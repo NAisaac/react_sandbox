@@ -28,7 +28,7 @@ class DishForm extends React.Component {
     return (
         <form className="fish-edit" onSubmit={this.createDish}>
           <input name="name" type="text" placeholder="Name" ref={this.nameRef} />
-          <input name="price" type="number" placeholder="Price" ref={this.priceRef} />
+          <input name="price" type="number" placeholder="Price" ref={this.priceRef} defaultValue={0} />
           <select name="status" ref={this.statusRef}>
             <option value={true}>A Few Left</option>
             <option value={false}>Sold Out</option>

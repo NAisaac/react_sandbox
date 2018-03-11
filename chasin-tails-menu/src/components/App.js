@@ -9,7 +9,7 @@ import sampleDishes from '../sample-dishes';
 class App extends React.Component {
   state = {
     dishes: {},
-    order: {}
+    orders: {}
   };
 
   addDish = (dish) => {
@@ -28,6 +28,15 @@ class App extends React.Component {
     this.setState({ dishes: sampleDishes });
   };
 
+  addOrder = (key) => {
+    // 1. copy existing state
+    const orders = { ...this.state.orders };
+    // 2. add new order into orders
+    orders[key] = orders[key] + 1 || 1;
+    // 3. update state
+    this.setState({ orders });
+  }
+
 
   render () {
     return (
@@ -35,10 +44,17 @@ class App extends React.Component {
         <div className="menu">
           <Header tagline="Hot & Fresh" />
           <ul className="fishes">
-            {Object.keys(this.state.dishes).map(key => <Dish key={key} info={this.state.dishes[key]} />)}
+            {Object.keys(this.state.dishes).map(key => 
+              <Dish 
+              key={key}
+              dishKey={key}
+              info={this.state.dishes[key]} 
+              addOrder={this.addOrder} 
+              />
+            )}
           </ul>
         </div>
-        <Order />
+        <Order dishes={this.state.dishes} orders={this.state.orders} />
         <Inventory 
         addDish={this.addDish} 
         loadSamples={this.loadSamples}

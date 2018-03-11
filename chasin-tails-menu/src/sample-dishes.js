@@ -6,7 +6,7 @@ const dishes = {
     desc:
       "Everyones favorite pick. No debate about it.",
     price: 2500,
-    status: "available"
+    status: true
   },
 
   dish1: {
@@ -15,7 +15,7 @@ const dishes = {
     desc:
       "Popular white fish. We will cut it to the size you need and ship it.",
     price: 1724,
-    status: "available"
+    status: true
   },
 
   dish2: {
@@ -24,7 +24,7 @@ const dishes = {
     desc:
       "These tender, mouth-watering beauties are a fantastic hit at any dinner party.",
     price: 3200,
-    status: "available"
+    status: true
   },
 
   dish3: {
@@ -33,7 +33,7 @@ const dishes = {
     desc:
       "Big, sweet and tender. True dry-pack scallops from the icey waters of Alaska. About 8-10 per pound",
     price: 1684,
-    status: "unavailable"
+    status: false
   },
 
   dish4: {
@@ -42,7 +42,7 @@ const dishes = {
     desc:
       "Lean flesh with a mild, sweet flavor profile, moderately firm texture and large, moist flakes. ",
     price: 1129,
-    status: "available"
+    status: true
   },
 
   dish5: {
@@ -51,7 +51,7 @@ const dishes = {
     desc:
       "Crack these open and enjoy them plain or with one of our cocktail sauces",
     price: 4234,
-    status: "available"
+    status: true
   },
 
   dish6: {
@@ -60,7 +60,7 @@ const dishes = {
     desc:
       "This flaky, oily salmon is truly the king of the sea. Bake it, grill it, broil it...as good as it gets!",
     price: 1453,
-    status: "available"
+    status: true
   },
 
   dish7: {
@@ -68,7 +68,7 @@ const dishes = {
     image: "/images/oysters.jpg",
     desc: "A soft plump oyster with a sweet salty flavor and a clean finish.",
     price: 2543,
-    status: "available"
+    status: true
   },
 
   dish8: {
@@ -77,7 +77,7 @@ const dishes = {
     desc:
       "The best mussels from the Pacific Northwest with a full-flavored and complex taste.",
     price: 425,
-    status: "available"
+    status: true
   },
 
   dish9: {
@@ -86,7 +86,7 @@ const dishes = {
     desc:
       "With 21-25 two bite prawns in each pound, these sweet morsels are perfect for shish-kabobs.",
     price: 2250,
-    status: "available"
+    status: false
   }
 };
 
