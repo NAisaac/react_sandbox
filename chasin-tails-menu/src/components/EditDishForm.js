@@ -25,6 +25,7 @@ class EditDishForm extends React.Component {
                 </select>
                 <textarea name="desc" value={desc} onChange={this.handleChange} />
                 <input name="image" type="text" placeholder="Image" ref={this.imageRef}  onChange={this.handleChange} />
+                <button onClick={() => this.props.deleteFish(this.props.dishKey)}>Remove Fish</button>
             </div> 
         );
     }

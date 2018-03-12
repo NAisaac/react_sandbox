@@ -64,6 +64,13 @@ class App extends React.Component {
     this.setState({ dishes });
   }
 
+  deleteDish = (key) => {
+    const dishes = { ...this.state.dishes };
+    // normally delete dishes[key] would do, but for Firebase to delete, the value needs to be null
+    dishes[key] = null;
+    this.setState({ dishes });
+  }
+
   loadSamples = () => {
     this.setState({ dishes: sampleDishes });
   };
@@ -74,6 +81,13 @@ class App extends React.Component {
     // 2. add new order into orders
     orders[key] = orders[key] + 1 || 1;
     // 3. update state
+    this.setState({ orders });
+  };
+
+  deleteOrder = (key) => {
+    const orders = { ...this.state.orders };
+    // since we are not mirroring state.order to Firebase, we can do normal delete
+    delete orders[key]
     this.setState({ orders });
   }
 
@@ -94,11 +108,16 @@ class App extends React.Component {
             )}
           </ul>
         </div>
-        <Order dishes={this.state.dishes} orders={this.state.orders} />
+        <Order 
+        dishes={this.state.dishes} 
+        orders={this.state.orders}
+        deleteOrder={this.deleteOrder}
+        />
         <Inventory 
         dishes={this.state.dishes}
         addDish={this.addDish} 
         updateDish={this.updateDish}
+        deleteDish={this.deleteDish}
         loadSamples={this.loadSamples}
         />
       </div>

@@ -13,6 +13,7 @@ class Inventory extends React.Component {
           dishKey={key}
           dish={this.props.dishes[key]} 
           updateDish={this.props.updateDish}
+          deleteDish={this.props.deleteDish}
           />
         )}
         <DishForm addDish={this.props.addDish} />
