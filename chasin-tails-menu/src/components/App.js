@@ -5,6 +5,7 @@ import Order from './Order';
 import Dish from './Dish';
 import sampleDishes from '../sample-dishes';
 import base from '../base';
+import shortid from 'shortid';
 
 
 class App extends React.Component {
@@ -48,7 +49,7 @@ class App extends React.Component {
     // i.e. performance, out-of-order update issues
     const dishes = { ...this.state.dishes };
     // 2. add new dish into dishes
-    dishes[`dish${Date.now()}`] = dish;
+    dishes[`dish-${shortid.generate()}`] = dish;
     // 3. update state using setState() api
     // ES6 shortcut if key and value are the same i.e. this.setState({ dishes: dishes });
     this.setState({ dishes });
