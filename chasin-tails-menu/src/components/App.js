@@ -4,6 +4,7 @@ import Inventory from './Inventory';
 import Order from './Order';
 import Dish from './Dish';
 import sampleDishes from '../sample-dishes';
+import base from '../base';
 
 
 class App extends React.Component {
@@ -11,6 +12,19 @@ class App extends React.Component {
     dishes: {},
     orders: {}
   };
+
+  // when component mounts, sync database with store's dishes state and start listening for changes
+  componentDidMount() {
+    this.ref = base.syncState(`${this.props.match.params.storeId}/dishes`, {
+      context: this,
+      state: 'dishes'
+    });
+  }
+
+  // when component unmounts, stop listening to changes to clean up memory and prevent memory leak
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
 
   addDish = (dish) => {
     console.log('Add Dish to state');
