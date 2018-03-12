@@ -6,6 +6,9 @@ class Order extends React.Component {
     const dish = this.props.dishes[key];
     const count = this.props.orders[key];
     const isAvailable = dish && dish.status;
+    // stop. render null if no dish
+    if (!dish) return null;
+    // render order details
     if (isAvailable) {
       return (
         <li key={key}>
@@ -13,6 +16,7 @@ class Order extends React.Component {
         </li>
       );
     }
+    // render unavailability message
     return <li key={key}>Sorry {dish ? dish.name : 'this dish'} is no longer available</li>
   }
 

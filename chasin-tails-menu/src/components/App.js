@@ -13,12 +13,28 @@ class App extends React.Component {
     orders: {}
   };
 
-  // when component mounts, sync database with store's dishes state and start listening for changes
-  componentDidMount() {
-    this.ref = base.syncState(`${this.props.match.params.storeId}/dishes`, {
+  // storeId is passed into App component from the router as props
+  storeId = this.props.match.params.storeId;
+
+  // when component mounts
+  componentDidMount() {  
+    // reinstate state.orders from localStorage
+    const localStorageRef = localStorage.getItem(this.storeId);
+    if(localStorageRef) {
+      this.setState({ orders: JSON.parse(localStorageRef) });
+    }
+
+    // sync database with store's state.dishes and start listening for changes
+    this.ref = base.syncState(`${this.storeId}/dishes`, {
       context: this,
       state: 'dishes'
     });
+  }
+
+  // when component updates i.e. state updates
+  componentDidUpdate(prevProps, prevState) {
+    // update local storage with state.orders 
+    localStorage.setItem(this.storeId, JSON.stringify(this.state.orders));
   }
 
   // when component unmounts, stop listening to changes to clean up memory and prevent memory leak
