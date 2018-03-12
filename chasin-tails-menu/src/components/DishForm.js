@@ -33,7 +33,7 @@ class DishForm extends React.Component {
             <option value={true}>A Few Left</option>
             <option value={false}>Sold Out</option>
           </select>
-          <textarea name="desc" placeholder="Description" ref={this.descRef}></textarea>
+          <textarea name="desc" placeholder="Description" ref={this.descRef} />
           <input name="image" type="text" placeholder="Image" ref={this.imageRef} />
           <button type="submit">+ Add Dish</button>
         </form>
