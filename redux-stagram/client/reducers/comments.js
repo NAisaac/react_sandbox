@@ -4,7 +4,7 @@
 // and then returns an updated state
 
 function comments(state = [], action) {
-    console.log(state, action);
+    console.log('comments reducer');
     return state;
 }
 

@@ -10,7 +10,7 @@ function mapStateToProps (state) {
         comments: state.comments
     }
 }
-// take dispatch functions (actionCreator functions) and expose them as props
+// take dispatch functions (action functions) and expose them as props
 function mapDispatchToProps (dispatch) {
     return bindActionCreators(actionCreators, dispatch);
 }
