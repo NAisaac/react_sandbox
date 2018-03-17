@@ -14,7 +14,7 @@ class EditDishForm extends React.Component {
     };
 
     render() { 
-        const { name, price, status, desc, image } = this.props.dish;
+        const { name, price, status, desc } = this.props.dish;
         return (
             <div className="fish-edit">
                 <input name="name" type="text" value={name} onChange={this.handleChange}/>
@@ -24,8 +24,8 @@ class EditDishForm extends React.Component {
                     <option value={false}>Sold Out</option>
                 </select>
                 <textarea name="desc" value={desc} onChange={this.handleChange} />
-                <input name="image" type="text" placeholder="Image" ref={this.imageRef}  onChange={this.handleChange} />
-                <button onClick={() => this.props.deleteFish(this.props.dishKey)}>Remove Fish</button>
+                <input name="image" type="text" placeholder="Image" onChange={this.handleChange} />
+                <button onClick={() => this.props.deleteDish(this.props.dishKey)}>Remove Dish</button>
             </div> 
         );
     }
