@@ -4,7 +4,6 @@
 // and edits/updates the state and then returns the new state
 
 function posts(state = [], action) {
-    console.log('posts reducer', action);
     switch(action.type) {
         case 'INCREMENT_LIKES':
             const i = action.index;
