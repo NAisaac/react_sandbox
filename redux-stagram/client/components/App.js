@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
 
-// take state and expose them as props
+// take Redux's state and expose to App as props
 function mapStateToProps (state) {
     return {
         posts: state.posts,
         comments: state.comments
     }
 }
-// take dispatch functions (action functions) and expose them as props
+// take Redux's dispatch functions (action functions) and expose to App as props
 function mapDispatchToProps (dispatch) {
     return bindActionCreators(actionCreators, dispatch);
 }
